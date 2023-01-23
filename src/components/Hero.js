@@ -13,16 +13,17 @@ const Hero = () => {
     const categoryUrl = `${host}v1/excuse/${category}`;
 
     useEffect(() => {
-      getRandomExcuse()
+        getRandomExcuse();
     
+        //   eslint-disable-next-line 
     }, []);
 
-    const  getRandomExcuse = () => {
-		axios.get(randomUrl).then((result) => {
+    const getRandomExcuse = () => {
+        axios.get(randomUrl).then((result) => {
             setExcuse(result.data);
             setIsLoading(false)
-            console.log(result);
-		}).catch((err) => {
+            // console.log(result);
+        }).catch((err) => {
             console.log(err);
         });
     }
@@ -36,10 +37,11 @@ const Hero = () => {
                 setExcuse(res.data);
                 setIsLoading(false)
             }).catch((err) => {
+                setIsLoading(true)
                 console.log(err);
             })
         }
-	}
+    }
 
     return (
         <div className="container col-xxl-8 px-4 py-5">
@@ -51,8 +53,8 @@ const Hero = () => {
                     <h1 className="display-5 fw-bold lh-1 mb-3">No Excuse? Try Some Here!!</h1>
 
                     <p className="lead">Get excuses for your actions in the following categories.</p>
-                    
-                    <p className='h3'>Family | Office | Children | College | Party</p> 
+
+                    <p className='h3'>Family | Office | Children | College | Party</p>
 
                     <div className="excuse-text my-5">
 
@@ -61,24 +63,24 @@ const Hero = () => {
                                 <span className='h5'>Your Excuse</span>
                             </div>
                             <div className="card-body">
-                                
+
                                 <blockquote className="blockquote mb-0">
-                                    { 
-                                        isLoading? (
+                                    {
+                                        isLoading ? (
                                             <div className='text-center'>
                                                 <div className="spinner-border text-warning text-center" role="status">
                                                     <span className="visually-hidden">Loading...</span>
                                                 </div>
                                             </div>
-                                        ):
-                                        excuse.map(exc => (
-                                            <div key={ exc.id }>
-                                                <p>{ exc.excuse }</p>
-                                                <footer className="blockquote-footer mt-2 mb-0 fw-bold">Category: <cite title="Source Title" className='text-capitalize'>{ exc.category }</cite></footer>
-                                            </div>
-                                        ))
+                                        ) :
+                                            excuse.map(exc => (
+                                                <div key={exc.id}>
+                                                    <p>{exc.excuse}</p>
+                                                    <footer className="blockquote-footer mt-2 mb-0 fw-bold">Category: <cite title="Source Title" className='text-capitalize'>{exc.category}</cite></footer>
+                                                </div>
+                                            ))
                                     }
-                               
+
                                 </blockquote>
                             </div>
                         </div>
@@ -93,10 +95,10 @@ const Hero = () => {
                             <option value="college">College</option>
                             <option value="party">Party</option>
                         </select>
-                        <button type="button" 
+                        <button type="button"
                             className="btn btn-outline-secondary btn-lg px-4"
                             onClick={getExcuse}
-                            >
+                        >
                             Get Excuse
                         </button>
                     </div>
