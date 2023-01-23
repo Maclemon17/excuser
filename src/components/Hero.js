@@ -5,10 +5,12 @@ import axios from 'axios';
 const Hero = () => {
     const [category, setCategory] = useState('');
     const [excuse, setExcuse] = useState([]);
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
 
-    const randomUrl = 'https://excuser-three.vercel.app//v1/excuse';
-    const categoryUrl = `https://excuser-three.vercel.app//v1/excuse/${category}`;
+    const host = "https://excuser-three.vercel.app/";
+
+    const randomUrl = `${host}v1/excuse`;
+    const categoryUrl = `${host}v1/excuse/${category}`;
 
     useEffect(() => {
       getRandomExcuse()
@@ -19,6 +21,7 @@ const Hero = () => {
 		axios.get(randomUrl).then((result) => {
             setExcuse(result.data);
             setIsLoading(false)
+            console.log(result);
 		}).catch((err) => {
             console.log(err);
         });
