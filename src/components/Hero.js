@@ -95,7 +95,7 @@ const Hero = () => {
                             <option value="college">College</option>
                             <option value="party">Party</option>
                             <option value="funny">Funny</option>
-                            <option value="ugit nbelievable">Unbelievable</option>
+                            <option value="unbelievable">Unbelievable</option>
                             <option value="developers">Developers</option>
                             <option value="gaming">Gaming</option>
                         </select>
