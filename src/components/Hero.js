@@ -7,13 +7,13 @@ const Hero = () => {
     const [excuse, setExcuse] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
-    const randomUrl = 'https://excuser.herokuapp.com/v1/excuse';
-    const categoryUrl = `https://excuser.herokuapp.com/v1/excuse/${category}`;
+    const randomUrl = 'https://excuser-three.vercel.app//v1/excuse';
+    const categoryUrl = `https://excuser-three.vercel.app//v1/excuse/${category}`;
 
     useEffect(() => {
       getRandomExcuse()
     
-    }, [ ]);
+    }, []);
 
     const  getRandomExcuse = () => {
 		axios.get(randomUrl).then((result) => {
@@ -27,6 +27,7 @@ const Hero = () => {
     const getExcuse = () => {
         if (!category) {
             alert("Please Select a category")
+            getRandomExcuse()
         } else {
             axios.get(categoryUrl).then((res) => {
                 setExcuse(res.data);

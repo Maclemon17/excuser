@@ -12,9 +12,9 @@ const Footer = () => {
                 </div>
 
                 <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    {/* <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use xlink:href="#twitter" /></svg></a></li>
-                    <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use xlink:href="#instagram" /></svg></a></li>
-                    <li className="ms-3"><a className="text-muted" href="#"><svg className="bi" width="24" height="24"><use xlink:href="#facebook" /></svg></a></li> */}
+                    <li className="ms-3"><a className="text-muted" href="#"></a></li>
+                    <li className="ms-3"><a className="text-muted" href="#"></a></li>
+                    <li className="ms-3"><a className="text-muted" href="#"></a></li>
                 </ul>
             </footer>
         </div>
