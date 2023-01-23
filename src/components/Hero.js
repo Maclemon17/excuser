@@ -94,6 +94,10 @@ const Hero = () => {
                             <option value="children">Children</option>
                             <option value="college">College</option>
                             <option value="party">Party</option>
+                            <option value="funny">Funny</option>
+                            <option value="ugit nbelievable">Unbelievable</option>
+                            <option value="developers">Developers</option>
+                            <option value="gaming">Gaming</option>
                         </select>
                         <button type="button"
                             className="btn btn-outline-secondary btn-lg px-4"
